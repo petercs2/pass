@@ -5,9 +5,12 @@ import 'package:audio_clock/pages/audio_list/audio_list_binding.dart';
 import 'package:audio_clock/pages/audio_list/audio_list_view.dart';
 import 'package:audio_clock/pages/audio_main/audio_main_binding.dart';
 import 'package:audio_clock/pages/audio_main/audio_main_view.dart';
+import 'package:audio_clock/pages/audio_tool/audio_tool_binding.dart';
+import 'package:audio_clock/pages/audio_tool/audio_tool_view.dart';
 import 'package:audio_clock/pages/no_network/no_network_binding.dart';
 import 'package:audio_clock/pages/no_network/no_network_view.dart';
 import 'package:audio_clock/pages/remind/remind_binding.dart';
+import 'package:audio_clock/pages/remind/remind_build.dart';
 import 'package:audio_clock/pages/remind/remind_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -28,9 +31,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      getPages: Audios
-      ,
-      initialRoute: '/audio_main',
+      getPages: Audios,
+      initialRoute: '/init_page',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -83,8 +85,10 @@ class MyApp extends StatelessWidget {
 }
 
 List<GetPage<dynamic>> Audios = [
+  GetPage(name: '/init_page', page: () => const AudioToolView(), binding: AudioToolBinding()),
   GetPage(name: '/audio_main', page: () => const AudioMainPage(), binding: AudioMainBinding()),
   GetPage(name: '/restart', page: () => NoNetworkPage(), binding: NoNetworkBinding()),
+  GetPage(name: '/audio_build', page: () => const RemindBuild()),
   GetPage(name: '/audio_list', page: () => const AudioListPage(), binding: AudioListBinding()),
   GetPage(name: '/remind', page: () => RemindPage(), binding: RemindBinding()),
   GetPage(name: '/add_clock', page: () => AddClockPage(), binding: AddClockBinding()),

@@ -14,6 +14,10 @@
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
+	<key>NSCameraUsageDescription</key>
+    <string>Please access the camera to upload the photos</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Please access the album to upload the photos</string>
 	<key>CFBundleName</key>
 	<string>LUFEPNE CPM</string>
 	<key>CFBundlePackageType</key>
